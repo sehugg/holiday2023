@@ -190,7 +190,7 @@ void play_music();
 
 #define SETUP_VOICE(v, pw) \
   SID_PULSEWIDTH(v, pw);\
-  SID_ADSR(v, 8, 10, 2, 4);
+  SID_ADSR(v, 10, 10, 2, 4);
 
 void main() {
   
@@ -205,11 +205,11 @@ void main() {
   DLIST_SETUP(display_list);
 
   SID_INIT(15, 0b010);
-  SID.flt_ctrl = 0x17;
-  SID.flt_freq = 0x200;
-  SETUP_VOICE(v1, 0x100);
-  SETUP_VOICE(v2, 0x200);
-  SETUP_VOICE(v3, 0x300);
+  SID.flt_ctrl = 0x07;
+  SID.flt_freq = 0x400;
+  SETUP_VOICE(v1, 0x80);
+  SETUP_VOICE(v2, 0x100);
+  SETUP_VOICE(v3, 0x200);
 
   while (1) {
     raster_wait(200);
